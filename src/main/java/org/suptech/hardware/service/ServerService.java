@@ -1,6 +1,8 @@
-package service;
+package org.suptech.hardware.service;
 
-import model.Server;
+
+
+import org.suptech.hardware.model.Server;
 
 import java.io.IOException;
 import java.net.UnknownHostException;

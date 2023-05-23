@@ -1,4 +1,4 @@
-package model;
+package org.suptech.hardware.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Getter;
@@ -19,5 +19,4 @@ public class Response {
     protected String message;
     protected String developerMessage;
     protected Map<?, ?> data ;
-
 }

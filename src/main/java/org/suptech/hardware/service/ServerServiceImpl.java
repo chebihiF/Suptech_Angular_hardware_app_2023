@@ -1,13 +1,17 @@
-package service;
+package org.suptech.hardware.service;
 
-import jakarta.transaction.Transactional;
+
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import model.Server;
+
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
-import repo.ServerRepository;
+import org.suptech.hardware.model.Server;
+import org.suptech.hardware.repo.ServerRepository;
+import org.suptech.hardware.service.ServerService;
+
 
 import java.io.IOException;
 import java.net.InetAddress;
@@ -15,14 +19,15 @@ import java.net.UnknownHostException;
 import java.util.Collection;
 import java.util.Random;
 
-import static enumeration.Status.SERVER_DOWN;
-import static enumeration.Status.SERVER_UP;
+import static org.suptech.hardware.enumeration.Status.SERVER_DOWN;
+import static org.suptech.hardware.enumeration.Status.SERVER_UP;
+
 
 @Service
 @RequiredArgsConstructor
 @Transactional
 @Slf4j
-public class ServerServiceImpl implements ServerService{
+public class ServerServiceImpl implements ServerService {
 
     private final ServerRepository serverRepository;
 

@@ -1,4 +1,4 @@
-package enumeration;
+package org.suptech.hardware.enumeration;
 
 public enum Status {
     SERVER_UP("SERVER_UP"),

@@ -1,22 +1,25 @@
-package resource;
+package org.suptech.hardware.resource;
 
-import enumeration.Status;
-import jakarta.validation.Valid;
+
 import lombok.RequiredArgsConstructor;
-import lombok.Value;
-import model.Response;
-import model.Server;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import service.ServerService;
+import org.suptech.hardware.enumeration.Status;
+import org.suptech.hardware.model.Response;
+import org.suptech.hardware.model.Server;
+import org.suptech.hardware.service.ServerService;
 
+
+import javax.validation.Valid;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.time.LocalDateTime;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 @RestController
 @RequestMapping("/server")
@@ -25,7 +28,8 @@ public class ServerResource {
     private final ServerService service;
 
     @GetMapping("/list")
-    public ResponseEntity<Response> getServers() {
+    public ResponseEntity<Response> getServers() throws InterruptedException {
+        //TimeUnit.SECONDS.sleep(5);
         return ResponseEntity.ok(
                 Response.builder()
                         .timeStamp(LocalDateTime.now())

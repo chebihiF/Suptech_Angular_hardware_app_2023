@@ -1,17 +1,21 @@
-package model;
+package org.suptech.hardware.model;
 
-import enumeration.Status;
-import jakarta.persistence.*;
-import jakarta.validation.constraints.NotEmpty;
+
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.suptech.hardware.enumeration.Status;
+
+import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
 @Getter @Setter @AllArgsConstructor @NoArgsConstructor
 public class Server {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id ;
     @Column(unique = true)
     @NotEmpty(message = "Ip Address cannot be empty or null")
